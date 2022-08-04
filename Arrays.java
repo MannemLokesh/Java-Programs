@@ -1,66 +1,62 @@
 import java.util.Scanner;
 
-public class Arrays 
+public class Array 
 {
-	public static void main(String loki[]) 
+	public static void main(String[] args) 
 	{
-		Scanner sc=new Scanner(System.in);
-		// scanning Mat A row and col
-		System.out.println("enter row value of mat A");
-		int row1=sc.nextInt();
-		System.out.println("enter col value of mat A");
-		int col1=sc.nextInt();
-		int [][]a1= new int[row1][col1];
+		Scanner sc= new Scanner(System.in);
+		System.out.println("enter MatArow value");
+		int MatArow=sc.nextInt();
+		System.out.println("enter MatAcol value");
+		int MatAcol=sc.nextInt();
+		System.out.println("enter MatBrow value");
+		int MatBrow=sc.nextInt();
+		System.out.println("enter MatBcol value");
+		int MatBcol=sc.nextInt();
 		
-		// scanning Mat B row and col
-		System.out.println("enter row value of mat B");
-		int row2=sc.nextInt();
-		System.out.println("enter col value of mat B");
-		int col2=sc.nextInt();
-		int [][]a2= new int[row2][col2];
+		int MatA[][]=new int[MatArow][MatAcol];  
+		int MatB[][]=new int[MatBrow][MatBcol];
 		
-		// to check condition row col match
-		if(row1==col2 && col1==row2)
+		if(MatArow==MatBrow && MatAcol==MatBcol)
 		{
-			// to read Mat A values
-			for(int i=0; i<a1.length;i++)
+			// to scan elements for MatA
+			for(int b=0; b<MatA.length;b++)
 			{
-				for(int j=0; j<a1[i].length;j++)
+				for(int c=0; c<MatA[b].length;c++)
 				{
-					System.out.println("enter Mat A values for "
-							+i +"th row and "+j+"th col");
-					a1[i][j]=sc.nextInt();
-					
+					System.out.print("enter the value for MatA "+b+
+							" row and "+c+" column : ");
+					MatA[b][c]=sc.nextInt();
 				}
 			}
 			
-			//to read Mat B values
-			for(int i=0; i<a2.length;i++)
+			//to scan elements for MatB
+			for(int b=0; b<MatB.length;b++)
 			{
-				for(int j=0; j<a2[i].length;j++)
+				for(int c=0; c<MatB[b].length;c++)
 				{
-					System.out.println("enter Mat B values for "
-							+i+ "th row and "+j+"th col");
-					
-					a2[i][j]=sc.nextInt();
+					System.out.print("enter the value for MatB "+b+
+							" row and "+c+" column : ");
+					MatB[b][c]=sc.nextInt();
 				}
 			}
 			
-			//to calculate mat A and mat B
-			for(int i=0; i<a1.length;i++)
+			//to perform addition
+			for(int i=0; i<MatA.length;i++)
 			{
-				for(int j=0; j<a1[i].length;j++)
+				for(int j=0;j<MatA[i].length;j++)
 				{
-					System.out.print(a1[i][j]+a2[j][i]+" ");
+					System.out.print(MatA[i][j]+MatB[i][j]+" ");
 				}
 				System.out.println();
 			}
 		}
 		else
 		{
-			System.out.println("Invalid");
+			System.out.println("Invalid! cannot perform addition");
 		}
-			
+		
+		
 
 	}
 }
