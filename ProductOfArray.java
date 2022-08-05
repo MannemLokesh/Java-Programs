@@ -50,7 +50,6 @@ public class ProductOfArray
 					for(int j=0;j<MatA[i].length;j++)
 					{
 						sum=sum+(MatA[i][j]*MatB[j][k]);
-	//					System.out.print(MatA[i][j]+MatB[i][j]+" ");
 					}
 					System.out.print(sum+" ");
 				}
